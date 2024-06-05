@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock %}
+
+{% block main %}
+    <form action="/buy-tax" method="post">
+        <div class="mb-3">
+            <label for="buy-tax">Default tax on purchase: 5%<br>Current tax: {{ buy_tax }}%</label>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-25" id="buy-tax" name="buy-tax" placeholder="Buy tax in %" type="number">
+        </div>
+        <button class="btn btn-primary w-25" type="submit">Set buy tax</button>
+    </form>
+    <br>
+    <form action="/sell-tax" method="post">
+        <div class="mb-3">
+            <label for="sell-tax">Default tax on profit: 25%<br>Current tax: {{ sell_tax }}%</label>
+            <input autocomplete="off" class="form-control mx-auto w-25" id="sell-tax" name="sell-tax" placeholder="Sell tax in %" type="number">
+        </div>
+        <button class="btn btn-primary w-25" type="submit">Set sell tax</button>
+    </form>
+    <br>
+    <form action="/account-fee" method="post">
+        <div class="mb-3">
+            <label for="account-fee">Default account fee: 20$ per year<br>Current fee: {{ fee }}$</label><input autocomplete="off" class="form-control mx-auto w-25" id="account-fee" name="account-fee" placeholder="Account fee in $" type="number">
+        </div>
+        <button class="btn btn-primary w-25" type="submit">Set account fee</button>
+    </form>
+{% endblock %}

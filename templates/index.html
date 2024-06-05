@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block main %}
+    <div class=mb-3>
+        <h2>Total portfolio value: <i>{{ total | usd }}</i></h2>
+        <h4>Of which cash: <i>{{ cash | usd }} ({{ '{:0.1f}'.format(cash * 100 / total) }}%)</i></h4>
+        <h4>Of which stock options: <i>{{ stockvalue | usd }} ({{ '{:0.1f}'.format(stockvalue * 100 / total) }}%)</i>
+        </h4>
+    </div>
+    <br>
+    <div class="container">
+        <h2>All holdings</h2>
+        <table class="w-100">
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Avg Purchase Price</th>
+                <th>Current Price</th>
+                <th>Purchase Value</th>
+                <th>Current Value</th>
+                <th>Difference</th>
+            </tr>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.symbol }}</td>
+                    <td>{{ transaction.total_quantity }}</td>
+                    <td>{{ transaction.avg_price | usd }}</td>
+                    <td>{{ transaction.current_price | usd }}</td>
+                    <td>{{ transaction.purchase_value | usd }}</td>
+                    <td>{{ transaction.current_value | usd }}</td>
+                    <td>{{ transaction.difference }}%</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

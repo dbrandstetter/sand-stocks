@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h2>Trading history</h2>
+        <table class="w-75">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Symbol</th>
+                    <th>Quantity</th>
+                    <th>Buy/sell price</th>
+                    <th>Taxes</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                    <tr>
+                        <td>{{ transaction.type }}</td>
+                        <td>{{ transaction.symbol }}</td>
+                        <td>{{ transaction.quantity }}</td>
+                        <td>{{ transaction.price | usd }}</td>
+                        <td>{{ transaction.tax | usd }}</td>
+                        <td>{{ transaction.date }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

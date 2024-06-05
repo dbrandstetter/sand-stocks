@@ -1,0 +1,105 @@
+/* Size for brand */
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue {
+    color: #537fbe;
+}
+
+nav .navbar-brand .red {
+    color: #ea433b;
+}
+
+nav .navbar-brand .yellow {
+    color: #f5b82e;
+}
+
+nav .navbar-brand .green {
+    color: #18642c;
+}
+
+nav .navbar-brand .beige {
+    color: #75754d;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: nowrap column;
+}
+
+td {
+    min-width: 150px;
+}
+
+.data-table td:first-child {
+    width: 50%;
+}
+
+.data-table td:last-child {
+    width: 50%;
+}
+
+.data-table td:first-child {
+    text-align: right;
+}
+
+.data-table td:last-child {
+    text-align: left;
+}
+
+/*.custom-width {*/
+/*    width: 228px; !* Adjust this value as needed *!*/
+/*    !*margin: 0 auto; !* Center the element *!*!*/
+/*    margin-bottom: 10px;*/
+/*}*/
+
+/*#shares {*/
+/*    width: 200px;*/
+/*}*/
+
+.custom-select {
+    margin-bottom: 15px;
+}
+
+thead {
+    border: 1px solid black;
+    border-bottom: 3px solid black;
+    font-weight: bold;
+}
+
+tr {
+    border: 1px solid black;
+}
+
+/* Make the table have alternation color for every row */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Make the table have alternation color for every row */
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.btn, .btn:hover, .btn:active, .btn:visited, .btn:focus, .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
+    color: #ffffff;
+    background: #18642c;
+}
+
+div[role="alert"] {
+    background: rgba(18, 100, 44, 0.3);
+    color: black;
+}
+a {
+    color: #18642c;
+}
+
+.form-control:focus {
+  border-color: #18642c;
+  outline: 0;
+  box-shadow: 0 0 0 .2rem rgba(18, 64, 40,.25);
+}

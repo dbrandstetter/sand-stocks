@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+{#    <div class=mb-3>#}
+{#        <p>Fetched price for {{ symbol }}: {{ price | usd }}</p>#}
+{#    </div>#}
+
+    <form action="/quote" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-25" id="symbol" name="symbol"
+                   placeholder="Symbol" type="text">
+        </div>
+        <button class="btn btn-primary w-25" type="submit">Lookup price</button>
+    </form>
+
+    <h3 class="mt-3">Data</h3>
+    <!-- Display key data in a table -->
+    <table class="table data-table">
+        <tr>
+            <td>Country:</td>
+            <td>{{ country }}</td>
+        </tr>
+        <tr>
+            <td>State:</td>
+            <td>{{ state }}</td>
+        </tr>
+        <tr>
+            <td>Website:</td>
+            <td><a href="{{ website }}" target="_blank">{{ website }}</a></td>
+        </tr>
+        <tr>
+            <td>Sector:</td>
+            <td>{{ sector }}</td>
+        </tr>
+        <tr>
+            <td>Market Cap:</td>
+            <td>{{ marketCap }} {{ currency }}</td>
+        </tr>
+        <tr>
+            <td>52-Week High:</td>
+            <td>{{ fiftyTwoWeekHigh }}</td>
+        </tr>
+        <tr>
+            <td>52-Week Low:</td>
+            <td>{{ fiftyTwoWeekLow }}</td>
+        </tr>
+        <tr>
+            <td>Currency:</td>
+            <td>{{ currency }}</td>
+        </tr>
+        <tr>
+            <td>Long Name:</td>
+            <td>{{ longName }}</td>
+        </tr>
+        <tr>
+            <td>Open:</td>
+            <td>{{ open }}</td>
+        </tr>
+        <tr>
+            <td>Day Low:</td>
+            <td>{{ dayLow }}</td>
+        </tr>
+        <tr>
+            <td>Day High:</td>
+            <td>{{ dayHigh }}</td>
+        </tr>
+    </table>
+
+    <!-- Display plot -->
+    <img src="{{ url_for('static', filename='plot.png') }}" alt="Plot">
+{% endblock %}
